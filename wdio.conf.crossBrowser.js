@@ -38,15 +38,7 @@ config: {
   framework: 'mocha',
   //For spec and allure reporters
   reporters: [
-    'spec',
-    [
-      'allure',
-      {
-        outputDir: 'allure-results',
-        disableWebdriverStepsReporting: true,
-        disableWebdriverScreenshotsReporting: false,
-      },
-    ],
+    'spec'
   ],
   //For only spec reporter
   // reporters: ['spec'],
