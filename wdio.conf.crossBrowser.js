@@ -13,18 +13,18 @@ export const config = {
         args: ['--headless', '--disable-dev-shm-usage', '--no-sandbox', '--disable-gpu', '--window-size=1920,1080', '--allow-insecure-localhost'],
       },
     },
-    {
-      browserName: 'firefox',
-      'moz:firefoxOptions': {
-        args: ['--headless', '--disable-dev-shm-usage', '--no-sandbox', '--disable-gpu', '--window-size=1920,1080', '--allow-insecure-localhost'],
-      },
-    },
-    {
-      browserName: 'microsoftedge',
-      'ms:edgeOptions': {
-        args: ['--headless', '--disable-dev-shm-usage', '--no-sandbox', '--disable-gpu', '--window-size=1920,1080', '--allow-insecure-localhost'],
-      },
-    },
+    // {
+    //   browserName: 'firefox',
+    //   'moz:firefoxOptions': {
+    //     args: ['--headless', '--disable-dev-shm-usage', '--no-sandbox', '--disable-gpu', '--window-size=1920,1080', '--allow-insecure-localhost'],
+    //   },
+    // },
+    // {
+    //   browserName: 'microsoftedge',
+    //   'ms:edgeOptions': {
+    //     args: ['--headless', '--disable-dev-shm-usage', '--no-sandbox', '--disable-gpu', '--window-size=1920,1080', '--allow-insecure-localhost'],
+    //   },
+    // },
   ],
   suites: {
     testSuite_1: ['./test/specs/Example_tests/Test_1*.spec.js'],
