@@ -11,7 +11,7 @@ config: {
     {
       browserName: 'chrome',
       'goog:chromeOptions': {
-        args: ['--headless', '--disable-dev-shm-usage', '--no-sandbox', '--disable-gpu', '--window-size=1920,1080', '--allow-insecure-localhost'],
+        args: [ '--window-size=1920,1080'],
       },
     },
     // {
