@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "run_tests_crossBrowser": "npx wdio run wdio.conf.crossBrowser.js"
   },
   "author": "",
   "license": "ISC",
