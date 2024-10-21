@@ -2,7 +2,7 @@
 module.exports = { 
 config: {
   runner: 'local',
-  specs: ['./Tests'],
+  specs: ['./Tests/*.js'],
   // Patterns to exclude.
   exclude: [
   ],
