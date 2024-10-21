@@ -1,5 +1,6 @@
-process.env.MOBILE_TEST = 'false';
-export const config = {
+
+module.exports = { 
+config: {
   runner: 'local',
   specs: ['./Tests'],
   // Patterns to exclude.
@@ -27,11 +28,6 @@ export const config = {
     // },
   ],
   suites: {
-    testSuite_1: ['./test/specs/Example_tests/Test_1*.spec.js'],
-    testSuite_2: ['./test/specs/Example_tests/Test_2*.spec.js'],
-    UI_Suite: ['./test/specs/Example_tests/Test_3.spec.js'],
-    testSuite_mainpage: ['./test/specs/Main_page_tests/Main_page_func.spec.js'],
-    
    },
   logLevel: 'info',
   bail: 0,
@@ -209,4 +205,5 @@ export const config = {
    */
   // onReload: function(oldSessionId, newSessionId) {
   // }
-};
+}
+}
