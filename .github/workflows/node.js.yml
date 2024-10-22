@@ -31,8 +31,6 @@ jobs:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
 
-    - run: npm install
-    - run: npm ci
     - run: npm run build --if-present
 
     # Now check out the tests branch to run tests from there
@@ -40,5 +38,6 @@ jobs:
       uses: actions/checkout@v4
       with:
         ref: tests
-
+    - run: npm install
+    - run: npm ci
     - run: npm run run_tests_crossBrowser
