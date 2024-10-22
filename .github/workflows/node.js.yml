@@ -11,33 +11,23 @@ on:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     strategy:
       matrix:
         node-version: [18.x]
-        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
     steps:
     - uses: actions/checkout@v4
-      # First, check out the main branch for the build process
       with:
-        ref: main
-
+        ref: "tests"  # Check out the 'tests' branch specifically
+        
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v4
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
 
+    - run: npm ci  # Install dependencies from the package-lock.json in the 'tests' branch
     - run: npm run build --if-present
-
-    # Now check out the tests branch to run tests from there
-    - name: Checkout tests branch
-      uses: actions/checkout@v4
-      with:
-        ref: tests
-    - run: npm install
-    - run: npm ci
     - run: npm run run_tests_crossBrowser
