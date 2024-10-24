@@ -21,7 +21,6 @@ jobs:
     strategy:
       matrix:
         node-version: [18.x]
-        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
     steps:
     - uses: actions/checkout@v4
@@ -30,15 +29,21 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
+
+    # Install dependencies
     - run: npm install
     - run: npm ci
     - run: npm run build --if-present
-    - run: npm run run_tests_crossBrowser
 
+    # Run Cypress tests
+    - name: Run Cypress Tests
+      run: npm run test
+
+    # Generate Allure Report
     - name: Install Allure
       run: npm install allure-commandline --save-dev
     - name: Generate Allure Report
-      run: npm run allure:generate
+      run: npx allure generate allure-results --clean -o allure-report
     - name: Upload Allure Report
       uses: actions/upload-artifact@v3
       with:
