@@ -30,3 +30,13 @@ jobs:
     - run: npm ci
     - run: npm run build --if-present
     - run: npm run run_tests_crossBrowser
+
+    - name: Install Allure
+      run: npm install allure-commandline --save-dev
+    - name: Generate Allure Report
+      run: npm run allure:generate
+    - name: Upload Allure Report
+      uses: actions/upload-artifact@v3
+      with:
+        name: allure-report
+        path: allure-report
